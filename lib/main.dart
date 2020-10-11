@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/view/surahIndex.dart';
 //import 'package:holy_quran/view/homePage_screen.dart';
 import 'view/getStarted_screen.dart';
 import 'view/homePage_screen.dart';
@@ -18,7 +19,9 @@ class HolyQuran extends StatelessWidget {
       routes: {
         GetSatarted.id: (context) => GetSatarted(),
         SplashScreen.id: (context) => SplashScreen(),
-        HomePage.id: (context) => HomePage()
+        HomePage.id: (context) => HomePage(),
+
+        SurahIndex.id: (context) => SurahIndex(),
       },
     );
   }

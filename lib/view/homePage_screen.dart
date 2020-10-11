@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/view/surahIndex.dart';
 
 import '../constants.dart';
 //import 'package:holy_quran/constants.dart';
@@ -104,9 +105,15 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.height * .07,
                 child: FlatButton(
                   onPressed: () {},
-                  child: Text(
-                    'الفهرس',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, SurahIndex.id);
+                    },
+                    child: Text(
+                      'الفهرس',
+                      style:
+                      TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),

@@ -16,6 +16,7 @@ class GetSatarted extends StatefulWidget {
 }
 
 class _GetSatartedState extends State<GetSatarted> {
+  bool loading=true;
  // AssetsAudioPlayer _assetsAudioPlayer;
 
 
@@ -28,6 +29,12 @@ class _GetSatartedState extends State<GetSatarted> {
     _advancedPlayer=AudioPlayer();
    // _advancedPlayer.play("sound/sound.mp3");
     intiPlayer();
+   Future.delayed( Duration(seconds: 2),(){
+     setState(() {
+
+       loading=false;
+     });
+   });
 
   }
   Future <void>intiPlayer()async{
@@ -90,10 +97,15 @@ class _GetSatartedState extends State<GetSatarted> {
                 ),
                 height: MediaQuery.of(context).size.height * .6,
                 width: MediaQuery.of(context).size.width * .8,
-                child: Image.asset(
+             child: AnimatedOpacity(opacity: loading?0.5:1, duration: Duration(seconds: 6), child: Image.asset(
+               "images/q1.jpg",
+               //fit: BoxFit.fill,
+             ) ,),
+
+             /*   child: Image.asset(
                   "images/q1.jpg",
                   //fit: BoxFit.fill,
-                ),
+                ),*/
               ),
               Positioned(
                 bottom: 0,
