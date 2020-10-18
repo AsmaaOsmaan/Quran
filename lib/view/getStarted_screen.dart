@@ -6,6 +6,7 @@ import 'package:audioplayers/audioplayers.dart';
 //import 'package:holy_quran/view/homePage_screen.dart';
 
 import '../constants.dart';
+import 'home.dart';
 import 'homePage_screen.dart';
 //import 'package:assets_audio_player/assets_audio_player.dart';
 
@@ -120,7 +121,8 @@ class _GetSatartedState extends State<GetSatarted> {
                   child: Center(
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, HomePage.id);
+                        Navigator.pushNamed(context, Home.id);
+
                       },
                       child: Text(
                         'Get Started',
