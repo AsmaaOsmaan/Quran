@@ -19,18 +19,54 @@ class _surhViewState extends State<surhView> {
             itemBuilder: (context, index) {
               List<Surah>ss=snapshot.data;
               //for (int i = 0; i <= surahsNames.length; i++)
-              return ListTile(
-                title: Text("${ss[index].name}",
-                    style: new TextStyle(fontSize: 13.9, color: Colors.blue)),
-                leading: new CircleAvatar(
-                  backgroundColor: Colors.green,
-                  child: new Text(
-                    "0",
-                    style: TextStyle(fontSize: 19.9, color: Colors.yellow),
+              return Container(
+                height: 70,
+                child: Card(
+
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          new  Text("${ss[index].englishName}",
+                              style: new TextStyle(fontSize: 18, color: Colors.blue)),
+                          SizedBox(height: 5,),
+                          new  Text("${ss[index].englishNameTranslation}",
+
+                              style: new TextStyle(fontSize: 13.9, color: Colors.blue)),
+                        ],
+                      ),
+                      Text("${ss[index].revelationType}",
+                          style: new TextStyle(fontSize:15, color: Colors.blueGrey)),
+
+                      Text("${ss[index].name}",
+                          style: new TextStyle(fontSize:18, color: Colors.teal)),
+                    ],
                   ),
                 ),
-                onTap: () {},
               );
+
+
+              /*ListTile(
+
+                title: Text("${ss[index].name}",
+                    style: new TextStyle(fontSize: 13.9, color: Colors.teal)),
+                leading:  Column(
+                    children: <Widget>[
+                      new  Text("${ss[index].englishName}",
+                          style: new TextStyle(fontSize: 13.9, color: Colors.blue)),
+                      new  Text("${ss[index].englishNameTranslation}",
+                          style: new TextStyle(fontSize: 13.9, color: Colors.blue)),
+                    ],
+                  ),
+
+
+                onTap: () {},
+              );*/
             },
           );
         } else {
