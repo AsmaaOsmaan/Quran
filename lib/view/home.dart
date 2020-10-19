@@ -24,10 +24,20 @@ class _HomeState extends State<Home> with TickerProviderStateMixin{
     return Scaffold(
 appBar: AppBar(
   title: Text("Quran"),
+  bottom:   TabBar(
+    controller:tabController ,
+
+    tabs: [
+      Tab(text:"Surah" ,),
+      Tab(text:"juza" ,),
+      Tab(text:"Notes" ,),
+    ],
+
+  ),
 ),
       body: Column(
       children: <Widget>[
-        TabBar(
+      /*  TabBar(
           controller:tabController ,
 
           tabs: [
@@ -36,7 +46,7 @@ appBar: AppBar(
             Tab(text:"Notes" ,),
           ],
 
-        ),
+        ),*/
         Flexible(
           child: TabBarView(
             controller:tabController ,
