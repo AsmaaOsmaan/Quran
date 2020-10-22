@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:untitled3/controller/services/api.dart';
 import 'package:untitled3/models/arguments.dart';
+import 'package:untitled3/models/ayahs.dart';
 import 'package:untitled3/models/surah.dart';
 
-import 'Ayat_view.dart';
-
-class surhView extends StatefulWidget {
+class AyatView extends StatefulWidget {
+  static const id = 'AyatView';
   @override
-  _surhViewState createState() => _surhViewState();
+  _AyatViewState createState() => _AyatViewState();
 }
 
-class _surhViewState extends State<surhView> {
-  Api api=Api();
+class _AyatViewState extends State<AyatView> {
   @override
   Widget build(BuildContext context) {
+    final ScreenArguments args = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
-      body: FutureBuilder(future:api.getData() ,builder: (context, snapshot) {
+appBar: AppBar(title: Text("Ayat"),),
+      body:ListView.builder(
+        itemCount: args.ayatsList.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text('${args.ayatsList[index]['text']}'),
+          );
+        },
+      ) );
+
+
+      /*FutureBuilder(future: ,builder: (context, snapshot) {
         if (snapshot.hasData) {
           return ListView.builder(
             itemCount: snapshot.data.length,
@@ -37,7 +48,7 @@ class _surhViewState extends State<surhView> {
 
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             new  Text("${ss[index].englishName}",
                                 style: new TextStyle(fontSize: 18, color: Colors.blue)),
@@ -81,31 +92,24 @@ class _surhViewState extends State<surhView> {
           return Center(child: Text('no data'),);
         }
       } ,
-      ));
+      )*/
+
+    /*  Container(
+
+        child: Text("${args.ayatsList}")
+       // child:ayat(context,args.ayatsList),
+      ),*/
 
 
 
-    /* child: GestureDetector(
-            behavior: HitTestBehavior.translucent,
-            onTap: ()async{
-              print ("work");
-              Api api= new Api();
-              var suras= await api.getData();
-
-              print("*********************************************");
-              print("suras${suras}");
-              for(var item in suras){
-                print(item.name);
-
-              }
-            },
-            child: Container(
-              child: Text('quranGestur'),
-            ),
-          ),*/
+  }
+  Widget ayat(BuildContext context,List<dynamic> ss){
+    print(ss.length);
+    for(int index=1;index<=ss.length;index++ ){
+     print(ss[index]['text']);
 
 
-
-
+      return Text("${ss[index]['text']}");
+    }
   }
 }

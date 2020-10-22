@@ -20,12 +20,12 @@ try{
  if(response.statusCode==200){
    String data=response.body;
    var jsonData=jsonDecode(data);
-   print(jsonData);
+  // print(jsonData);
    Surahs surahs=Surahs.fromjson(jsonData);
    print("***********************************");
    print("*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*");
-   print(surahs);
-   print(surahs.surah);
+   //print(surahs);
+  // print(surahs.surah);
   // print(surahs.surah.);
 suraas=  surahs.surah.map((e)=>Surah.fromjson(e)).toList();
 

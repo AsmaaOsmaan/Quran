@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/view/Ayat_view.dart';
 import 'package:untitled3/view/home.dart';
 import 'package:untitled3/view/surahIndex.dart';
 //import 'package:holy_quran/view/homePage_screen.dart';
@@ -22,6 +23,8 @@ class HolyQuran extends StatelessWidget {
         SplashScreen.id: (context) => SplashScreen(),
         HomePage.id: (context) => HomePage(),
         Home.id: (context) => Home(),
+        AyatView.id: (context) => AyatView(),
+
 
         SurahIndex.id: (context) => SurahIndex(),
       },
