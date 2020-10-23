@@ -24,12 +24,19 @@ class _AyatViewState extends State<AyatView> {
             //args.ayatsList[index]['text']
             return Container(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      foregroundColor: Colors.black,
+                      maxRadius: 10,
+                      child: Text("${args.ayatsList[index]["numberInSurah"]}")),
                   Flexible(
-                      child: Text(
-                    "${args.ayatsList[index]['text']}",
-                    textAlign: TextAlign.left,
-                  ))
+                      //fit: FlexFit.loose,
+                      child: Text("${args.ayatsList[index]['text']}",
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 3,
+                          textWidthBasis: TextWidthBasis.longestLine)),
                 ],
               ),
             );

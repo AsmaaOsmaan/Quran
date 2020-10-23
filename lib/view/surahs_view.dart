@@ -87,10 +87,11 @@ class _surhViewState extends State<surhView> {
                     onTap: () {
                       Navigator.pushNamed(context, AyatView.id,
                           arguments: ScreenArguments(
-                              ss[index].number,
-                              ss[index].englishName,
-                              ss[index].name,
-                              ss[index].ayahs));
+                            ss[index].number,
+                            ss[index].englishName,
+                            ss[index].name,
+                            ss[index].ayahs,
+                          ));
                     },
                   );
                 },
