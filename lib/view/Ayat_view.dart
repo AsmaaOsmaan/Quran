@@ -15,18 +15,50 @@ class _AyatViewState extends State<AyatView> {
     final ScreenArguments args = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
-appBar: AppBar(title: Text("Ayat"),),
-      body:ListView.builder(
-        itemCount: args.ayatsList.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text('${args.ayatsList[index]['text']}'),
-          );
-        },
-      ) );
+        appBar: AppBar(
+          title: Text("Ayat"),
+        ),
+        body: ListView.builder(
+          itemCount: args.ayatsList.length,
+          itemBuilder: (context, index) {
+            //args.ayatsList[index]['text']
+            return Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      foregroundColor: Colors.black,
+                      maxRadius: 10,
+                      child: Text("${args.ayatsList[index]["numberInSurah"]}")),
+                  Flexible(
+                      //fit: FlexFit.loose,
+                      child: Text("${args.ayatsList[index]['text']}",
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 3,
+                          textWidthBasis: TextWidthBasis.longestLine)),
+                ],
+              ),
+            );
+          },
+        ));
+  }
 
+  Widget ayat(BuildContext context, List<dynamic> ss) {
+    print(ss.length);
+    for (int index = 1; index <= ss.length; index++) {
+      print(ss[index]['text']);
 
-      /*FutureBuilder(future: ,builder: (context, snapshot) {
+      return Text("${ss[index]['text']}");
+    }
+  }
+}
+/*
+return ListTile(
+              title: Text('${args.ayatsList[index]['text']}'),
+            );
+ */
+/*FutureBuilder(future: ,builder: (context, snapshot) {
         if (snapshot.hasData) {
           return ListView.builder(
             itemCount: snapshot.data.length,
@@ -94,22 +126,8 @@ appBar: AppBar(title: Text("Ayat"),),
       } ,
       )*/
 
-    /*  Container(
+/*  Container(
 
         child: Text("${args.ayatsList}")
        // child:ayat(context,args.ayatsList),
       ),*/
-
-
-
-  }
-  Widget ayat(BuildContext context,List<dynamic> ss){
-    print(ss.length);
-    for(int index=1;index<=ss.length;index++ ){
-     print(ss[index]['text']);
-
-
-      return Text("${ss[index]['text']}");
-    }
-  }
-}

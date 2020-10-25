@@ -19,6 +19,7 @@ environment:
 dependencies:
   audioplayers: any
   http: ^0.12.2
+  curved_navigation_bar: ^0.3.4
   flutter:
     sdk: flutter
 
