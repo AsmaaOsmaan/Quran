@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:untitled3/controller/services/api.dart';
-import 'package:untitled3/view/surahs_view.dart';
+import 'package:untitled3/view/homeScreen.dart';
 
 import 'juza_view.dart';
 import 'notes_view.dart';
@@ -52,7 +52,7 @@ appBar: AppBar(
             controller:tabController ,
             children: <Widget>[
 
-              surhView(),
+              HomeScreen(),
               juzaView(),
               Notes(),
 

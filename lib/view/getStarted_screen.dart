@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'homeScreen.dart';
 //import 'package:holy_quran/view/homePage_screen.dart';
 
 import '../constants.dart';
@@ -121,7 +122,7 @@ class _GetSatartedState extends State<GetSatarted> {
                   child: Center(
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, Home.id);
+                        Navigator.pushNamed(context, HomeScreen.id);
 
                       },
                       child: Text(

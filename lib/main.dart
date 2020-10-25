@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/view/Ayat_view.dart';
 import 'package:untitled3/view/home.dart';
 import 'package:untitled3/view/surahIndex.dart';
+import 'package:untitled3/view/homeScreen.dart';
 //import 'package:holy_quran/view/homePage_screen.dart';
 import 'view/getStarted_screen.dart';
 import 'view/homePage_screen.dart';
@@ -27,6 +28,7 @@ class HolyQuran extends StatelessWidget {
 
 
         SurahIndex.id: (context) => SurahIndex(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
     );
   }
