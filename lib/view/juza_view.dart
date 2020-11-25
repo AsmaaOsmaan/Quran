@@ -104,7 +104,7 @@ class _juzaViewState extends State<juzaView> {
                           ],
                         );
                       } else {
-                        return Center(child: Text('no data'),);
+                        return Center(child: Text('Loading...'),);
                       }
                     } ,
                     ),
